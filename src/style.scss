@@ -1,13 +1,75 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+    background-color: white;
     height: 100%;
+    color: black;
 }
 
-.logo {
-    background-image: url('img/tiny.png');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
+#add_note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note {
+    position: absolute;
+    margin: 0.2rem;
+    background-color:rgb(245, 216, 86);
+    overflow: scroll;
+    border: transparent;
+
+    .top_bar {
+        margin: 0.25rem;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 15px;
+
+        .clickable_options {
+            justify-self: end;
+            display: flex;
+            padding: 0.2rem;
+
+            .fas {
+                margin: 0.2rem;
+                font-size: 1.2rem;
+            }
+
+            .fa-arrows-alt {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .content_main {
+        margin: 0.25rem;
+        padding: 0.3rem;
+        border: 0.1rem solid rgb(224, 122, 95);
+        font-size: 1.3rem;
+    }
+}
+
+.edit_note {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 244, 194);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    height: 25%;
+
+    input {
+        width: 30%;
+        font-size: 15px;
+    }
+
+    textarea {
+        width: 100%;
+        font-size: 15px;
+    }
 }

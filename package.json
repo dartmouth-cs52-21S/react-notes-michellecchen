@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint src",
     "build": "npm run clean; NODE_ENV=production webpack --color",
     "winbuild": "npm run clean & SET NODE_ENV=production& webpack --color",
     "clean": "rimraf dist"
@@ -49,10 +49,13 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "immutable": "*",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8",
+    "marked": "^2.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-draggable": "^4.4.3",
     "react-router": "^5.2.0"
   }
 }
