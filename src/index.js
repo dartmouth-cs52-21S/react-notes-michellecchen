@@ -74,7 +74,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>Michelle's communal notes space</h1>
+                <h1>Communal notes space</h1>
                 <AddNote handleAdd={this.createNote} />
                 <NotesGroup
                     notesMap={this.state.notes}

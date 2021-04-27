@@ -42,40 +42,43 @@ h2 {
 
 .note {
     position: absolute;
-    margin: 0.2rem;
-    background-color:rgb(245, 216, 86);
     overflow: scroll;
+    margin: 10px;
+    background-color:rgb(245, 216, 86);
     border: transparent;
+    width: 250px;
+    height: auto;
 
-    .top_bar {
-        margin: 0.25rem;
-        padding: 15px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-size: 15px;
-
-        .clickable_options {
-            justify-self: end;
-            display: flex;
-            padding: 0.2rem;
-
-            .fas {
-                margin: 0.2rem;
-                font-size: 1.2rem;
-            }
-
-            .fa-arrows-alt {
-                cursor: pointer;
-            }
-        }
+    .note_title {
+        font-size: 18px;
+        font-weight: bold;
     }
 
     .content_main {
         margin: 0.25rem;
         padding: 0.3rem;
-        border: 0.1rem solid rgb(224, 122, 95);
-        font-size: 1.3rem;
+        font-size: 12px;
+    }
+}
+
+.options {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+
+    .clickable_options {
+        justify-self: end;
+        display: flex;
+
+        .fas {
+            margin: 5px;
+        }
+
+        .fa-arrows-alt {
+            cursor: pointer;
+        }
     }
 }
 
@@ -87,10 +90,16 @@ h2 {
     align-items: center;
     background-color: rgb(255, 244, 194);
     transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
     top: 50%;
     left: 50%;
-    width: 25%;
-    height: 25%;
+
+    span {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
 
     input {
         width: 30%;
@@ -98,7 +107,22 @@ h2 {
     }
 
     textarea {
-        width: 100%;
+        width: 200px;
         font-size: 15px;
+    }
+
+    button {
+        background-color: rgb(161, 197, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 1.5px;
+        border: transparent;
+        width: 150px;
+        height: 35px;
+    }
+
+    button:hover {
+        background-color: rgb(166, 225, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 2px;
     }
 }

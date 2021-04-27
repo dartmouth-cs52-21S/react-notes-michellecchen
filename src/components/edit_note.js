@@ -10,6 +10,15 @@ class EditNote extends Component {
         };
     }
 
+    // Exit editor -- make no changes
+    exitOut = () => {
+        this.props.exitNote();
+        this.setState({
+            title: this.props.title,
+            content: this.props.content,
+        });
+    }
+
     // Edit title
     editTitle = (e) => {
         this.setState({
@@ -32,25 +41,21 @@ class EditNote extends Component {
         );
     }
 
-    // Make no changes
-    exitOut = () => {
-        this.props.exitNote();
-        this.setState({
-            title: this.props.title,
-            content: this.props.content,
-        });
-    }
-
     render() {
         // if (!this.props.show) {
         //     return null;
         // }
         return (
             <div className="edit_note">
+
                 <span role="button" aria-label="Exit editing note" tabIndex={0} onClick={this.exitOut} className="fas fa-times" />
+                
                 <input onChange={this.editTitle} value={this.state.title} />
+
                 <textarea onChange={this.editContent} value={this.state.content} />
+
                 <button type="button" onClick={this.updateNote}>Save changes</button>
+
             </div>
         );
     }

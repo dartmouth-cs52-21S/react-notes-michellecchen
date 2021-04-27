@@ -65,9 +65,9 @@ class Note extends Component {
                 >
                     <div className="note">
 
-                        <div className="top_bar">
+                        <div className="options">
 
-                            <div className="title">
+                            <div className="note_title">
                                 {this.props.noteTitle}
                             </div>
 
