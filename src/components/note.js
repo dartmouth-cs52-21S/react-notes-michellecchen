@@ -9,7 +9,7 @@ class Note extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible: false,
+            editorVisible: false,
         };
     }
 
@@ -28,26 +28,26 @@ class Note extends Component {
         this.props.onDragNote(this.props.id, movedTo);
     }
 
-    toggleVisibility = () => {
+    toggleEditorVisibility = () => {
         this.setState((prevState) => ({
-            visible: !prevState.visible,
+            editorVisible: !prevState.editorVisible,
         }));
     }
 
     reviseNote = (title, content) => {
         this.props.onEdit(this.props.id, title, content);
-        this.toggleVisibility();
+        this.toggleEditorVisibility();
     }
 
     // EditNote component
-    instantiateNote() {
+    openEditor() {
         const revised = (
             <EditNote
                 show={this.state.visibility}
                 title={this.props.noteTitle}
                 content={this.props.noteContent}
                 onUpdateNote={this.reviseNote}
-                exitNote={this.toggleVisibility}
+                exitNote={this.toggleEditorVisibility}
             />
         );
         return revised;
@@ -88,7 +88,7 @@ class Note extends Component {
 
                 </Draggable>
 
-                {this.instantiateNote()}
+                {this.openEditor()}
 
             </div>
         );

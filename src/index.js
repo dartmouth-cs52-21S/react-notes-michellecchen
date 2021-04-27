@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 import { Map } from 'immutable';
 import NotesGroup from './components/notes_group';
-import AddNoteBar from './components/add_note_bar';
+import AddNote from './components/add_note';
 
 class App extends Component {
     constructor(props) {
@@ -74,7 +74,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <AddNoteBar handleAdd={this.createNote} />
+                <h1>Michelle's communal notes space</h1>
+                <AddNote handleAdd={this.createNote} />
                 <NotesGroup
                     notesMap={this.state.notes}
                     onEditNote={this.editNote}

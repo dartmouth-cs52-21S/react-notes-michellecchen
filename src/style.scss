@@ -5,10 +5,39 @@ body, html {
     color: black;
 }
 
+h1 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
 #add_note {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    button {
+        margin-top: 15px;
+        background-color: rgb(161, 197, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 1.5px;
+        border: transparent;
+        width: 150px;
+        height: 35px;
+    }
+
+    button:hover {
+        background-color: rgb(166, 225, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 2px;
+    }
 }
 
 .note {
