@@ -1,8 +1,12 @@
-body, html {
+body {
     font-family: "Roboto", sans-serif;
-    background-color: white;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/70df9491-e338-4869-8d13-06bb1fa30522/d60tw3o-42c7057b-b3dd-4672-ba24-d3de9f2cb281.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNzBkZjk0OTEtZTMzOC00ODY5LThkMTMtMDZiYjFmYTMwNTIyXC9kNjB0dzNvLTQyYzcwNTdiLWIzZGQtNDY3Mi1iYTI0LWQzZGU5ZjJjYjI4MS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.8UU7bcq2n9xATpj7SXA-AnnpWdTwGJ3ME3fSZs-6Ur0");
     height: 100%;
     color: black;
+}
+
+html {
+    height: 100%;
 }
 
 h1 {
@@ -16,6 +20,12 @@ h2 {
     font-size: 15px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+h3 {
+    font-size: 13px;
+    text-align: center;
 }
 
 .note {
@@ -24,9 +34,11 @@ h2 {
     background-color:rgb(245, 216, 86);
     border: transparent;
     width: 250px;
-    height: auto;
+    height: 200px;
     display: flex;
     flex-direction: column;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
 }
 
 .note_title {
@@ -35,8 +47,10 @@ h2 {
 }
 
 .content_main {
-    margin: 10px;
-    font-size: 12px;
+    font-size: 13px;
+    height: 120px;
+    overflow: auto;
+    margin-left: 15px;
 }
 
 #add_note {
@@ -94,22 +108,6 @@ h2 {
     top: 50%;
     left: 50%;
 
-    span {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-    }
-
-    input {
-        width: 30%;
-        font-size: 15px;
-    }
-
-    textarea {
-        width: 200px;
-        font-size: 15px;
-    }
-
     button {
         background-color: rgb(161, 197, 255);
         transition: all 0.5s ease-in-out;
@@ -117,6 +115,7 @@ h2 {
         border: transparent;
         width: 150px;
         height: 35px;
+        margin: 15px 0 15px;
     }
 
     button:hover {
@@ -125,4 +124,22 @@ h2 {
         letter-spacing: 2px;
         cursor: pointer;
     }
+}
+
+textarea {
+    width: 200px;
+    font-size: 15px;
+    padding: 12px 20px;
+    resize: none;
+}
+
+input {
+    font-size: 15px;
+    padding: 12px 20px;
+}
+
+span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
