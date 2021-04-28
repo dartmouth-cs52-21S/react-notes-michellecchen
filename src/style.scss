@@ -1,0 +1,145 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/70df9491-e338-4869-8d13-06bb1fa30522/d60tw3o-42c7057b-b3dd-4672-ba24-d3de9f2cb281.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNzBkZjk0OTEtZTMzOC00ODY5LThkMTMtMDZiYjFmYTMwNTIyXC9kNjB0dzNvLTQyYzcwNTdiLWIzZGQtNDY3Mi1iYTI0LWQzZGU5ZjJjYjI4MS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.8UU7bcq2n9xATpj7SXA-AnnpWdTwGJ3ME3fSZs-6Ur0");
+    height: 100%;
+    color: black;
+}
+
+html {
+    height: 100%;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+h3 {
+    font-size: 13px;
+    text-align: center;
+}
+
+.note {
+    position: absolute;
+    margin: 10px;
+    background-color:rgb(245, 216, 86);
+    border: transparent;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+.note_title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content_main {
+    font-size: 13px;
+    height: 120px;
+    overflow: auto;
+    margin-left: 15px;
+}
+
+#add_note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+        margin-top: 15px;
+        background-color: rgb(161, 197, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 1.5px;
+        border: transparent;
+        width: 150px;
+        height: 35px;
+    }
+
+    button:hover {
+        background-color: rgb(166, 225, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+}
+
+.options {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.fas {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.clickable_options {
+    justify-self: end;
+    display: flex;
+}
+
+.edit_note {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 244, 194);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+
+    button {
+        background-color: rgb(161, 197, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 1.5px;
+        border: transparent;
+        width: 150px;
+        height: 35px;
+        margin: 15px 0 15px;
+    }
+
+    button:hover {
+        background-color: rgb(166, 225, 255);
+        transition: all 0.5s ease-in-out;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+}
+
+textarea {
+    width: 200px;
+    font-size: 15px;
+    padding: 12px 20px;
+    resize: none;
+}
+
+input {
+    font-size: 15px;
+    padding: 12px 20px;
+}
+
+span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
