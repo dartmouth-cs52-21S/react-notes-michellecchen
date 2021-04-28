@@ -8,46 +8,41 @@ class Note extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            editorVisible: false,
-        };
+        this.state = { editorVisible: false };
+    }
+
+    onRevise = (title, content) => {
+        this.props.onEdit(this.props.id, title, content);
+        this.toggleEditorVisibility();
     }
 
     // Remove/delete by ID
-    onRemove = () => {
-        this.props.onDelete(this.props.id);
-    }
+    onRemove = () => { this.props.onDelete(this.props.id); }
 
     onReposition = (e, data) => {
-        const position = this.props.notePos;
+        const position = this.props.noteCoordinates;
         const movedTo = Map({
-            x: position.get('x') + data.deltaX,
-            y: position.get('y') + data.deltaY,
-            z: position.get('z'),
+            x: position.x + data.deltaX,
+            y: position.y + data.deltaY,
+            z: position.z,
         });
         this.props.onDragNote(this.props.id, movedTo);
     }
 
+    // fixed
     toggleEditorVisibility = () => {
-        this.setState((prevState) => ({
-            editorVisible: !prevState.editorVisible,
-        }));
-    }
-
-    reviseNote = (title, content) => {
-        this.props.onEdit(this.props.id, title, content);
-        this.toggleEditorVisibility();
+        this.setState((prevState) => ({ editorVisible: !prevState.editorVisible }));
     }
 
     // EditNote component
     openEditor() {
         const revised = (
             <EditNote
-                show={this.state.visibility}
                 title={this.props.noteTitle}
                 content={this.props.noteContent}
-                onUpdateNote={this.reviseNote}
-                exitNote={this.toggleEditorVisibility}
+                show={this.state.editorVisible}
+                onUpdateNote={this.onRevise}
+                closeEditor={this.toggleEditorVisibility}
             />
         );
         return revised;
@@ -59,8 +54,12 @@ class Note extends Component {
                 <Draggable
                     onDrag={this.onReposition}
                     handle=".fa-arrows-alt"
-                    grid={[10, 10]}
-                    defaultPosition={{ x: 0, y: 0 }}
+                    grid={[15, 15]}
+                    position={{
+                        x: this.props.noteCoordinates.x,
+                        y: this.props.noteCoordinates.y,
+                       }}
+                    defaultPosition={{ x: 15, y: 15 }}
                     bounds="body"
                 >
                     <div className="note">
@@ -73,7 +72,7 @@ class Note extends Component {
 
                             <div className="clickable_options">
                                 <i role="button" aria-label="Delete note" tabIndex={0} className="fas fa-trash-alt" onClick={this.onRemove} />
-                                <i role="button" aria-label="Edit note" tabIndex={0} className="fas fa-edit" onClick={this.toggleVisibility} />
+                                <i role="button" aria-label="Edit note" tabIndex={0} className="fas fa-edit" onClick={this.toggleEditorVisibility} />
                                 <i className="fas fa-arrows-alt" />
                             </div>
 

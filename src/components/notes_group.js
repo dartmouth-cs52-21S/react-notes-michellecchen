@@ -7,11 +7,11 @@ const NotesGroup = (props) => {
         return (
 
             <Note
-                key={id}
-                id={id}
-                notePos={note.get('position')}
                 noteTitle={note.get('title')}
                 noteContent={note.get('content')}
+                key={id}
+                id={id}
+                noteCoordinates={note.get('position')}
                 onEdit={props.onEditNote}
                 onDragNote={props.onDragNote}
                 onDelete={props.onDelete}

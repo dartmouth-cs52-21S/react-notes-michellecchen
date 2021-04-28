@@ -12,7 +12,7 @@ class EditNote extends Component {
 
     // Exit editor -- make no changes
     exitOut = () => {
-        this.props.exitNote();
+        this.props.closeEditor();
         this.setState({
             title: this.props.title,
             content: this.props.content,
@@ -42,18 +42,15 @@ class EditNote extends Component {
     }
 
     render() {
-        // if (!this.props.show) {
-        //     return null;
-        // }
+        if (!this.props.show) {
+            return null;
+        }
         return (
             <div className="edit_note">
 
                 <span role="button" aria-label="Exit editing note" tabIndex={0} onClick={this.exitOut} className="fas fa-times" />
-                
                 <input onChange={this.editTitle} value={this.state.title} />
-
                 <textarea onChange={this.editContent} value={this.state.content} />
-
                 <button type="button" onClick={this.updateNote}>Save changes</button>
 
             </div>

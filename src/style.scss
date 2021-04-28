@@ -17,6 +17,27 @@ h2 {
     font-weight: bold;
 }
 
+.note {
+    position: absolute;
+    margin: 10px;
+    background-color:rgb(245, 216, 86);
+    border: transparent;
+    width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.note_title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content_main {
+    margin: 10px;
+    font-size: 12px;
+}
+
 #add_note {
     display: flex;
     flex-direction: column;
@@ -40,46 +61,22 @@ h2 {
     }
 }
 
-.note {
-    position: absolute;
-    overflow: scroll;
-    margin: 10px;
-    background-color:rgb(245, 216, 86);
-    border: transparent;
-    width: 250px;
-    height: auto;
-
-    .note_title {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .content_main {
-        margin: 0.25rem;
-        padding: 0.3rem;
-        font-size: 12px;
-    }
-}
-
 .options {
     padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 15px;
+}
 
-    .clickable_options {
-        justify-self: end;
-        display: flex;
+.fas {
+    margin: 5px;
+    cursor: pointer;
+}
 
-        .fas {
-            margin: 5px;
-        }
-
-        .fa-arrows-alt {
-            cursor: pointer;
-        }
-    }
+.clickable_options {
+    justify-self: end;
+    display: flex;
 }
 
 .edit_note {
