@@ -9,6 +9,7 @@ h1 {
     font-size: 30px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 h2 {
@@ -58,6 +59,7 @@ h2 {
         background-color: rgb(166, 225, 255);
         transition: all 0.5s ease-in-out;
         letter-spacing: 2px;
+        cursor: pointer;
     }
 }
 
@@ -121,5 +123,6 @@ h2 {
         background-color: rgb(166, 225, 255);
         transition: all 0.5s ease-in-out;
         letter-spacing: 2px;
+        cursor: pointer;
     }
 }

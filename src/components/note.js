@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Map } from 'immutable';
 import Draggable from 'react-draggable';
 import marked from 'marked';
 import EditNote from './edit_note';
@@ -21,11 +20,11 @@ class Note extends Component {
 
     onReposition = (e, data) => {
         const position = this.props.noteCoordinates;
-        const movedTo = Map({
+        const movedTo = {
             x: position.x + data.deltaX,
             y: position.y + data.deltaY,
             z: position.z,
-        });
+        };
         this.props.onDragNote(this.props.id, movedTo);
     }
 
@@ -71,9 +70,9 @@ class Note extends Component {
                             </div>
 
                             <div className="clickable_options">
-                                <i role="button" aria-label="Delete note" tabIndex={0} className="fas fa-trash-alt" onClick={this.onRemove} />
-                                <i role="button" aria-label="Edit note" tabIndex={0} className="fas fa-edit" onClick={this.toggleEditorVisibility} />
                                 <i className="fas fa-arrows-alt" />
+                                <i role="button" aria-label="Edit note" tabIndex={0} className="fas fa-edit" onClick={this.toggleEditorVisibility} />
+                                <i role="button" aria-label="Delete note" tabIndex={0} className="fas fa-trash-alt" onClick={this.onRemove} />
                             </div>
 
                         </div>

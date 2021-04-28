@@ -49,7 +49,10 @@ class EditNote extends Component {
             <div className="edit_note">
 
                 <span role="button" aria-label="Exit editing note" tabIndex={0} onClick={this.exitOut} className="fas fa-times" />
+                <h2>Edit your note!</h2>
+                <h3>Title:</h3>
                 <input onChange={this.editTitle} value={this.state.title} />
+                <h3>Content:</h3>
                 <textarea onChange={this.editContent} value={this.state.content} />
                 <button type="button" onClick={this.updateNote}>Save changes</button>
 
